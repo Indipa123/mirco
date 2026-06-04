@@ -40,9 +40,9 @@ const realImages = {
     "https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1200&q=80",
   ],
   pottery: [
-    "https://images.unsplash.com/photo-1493106819501-66d381c466f1?auto=format&fit=crop&w=1200&q=80",
-    "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=1200&q=80",
-    "https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1612528443702-f6741f70a049?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=1200&q=80",
   ],
   garden: [
     "https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?auto=format&fit=crop&w=1200&q=80",
@@ -82,7 +82,7 @@ export const categories = [
   {
     id: "pottery",
     name: "Pottery & Ceramics",
-    image: "https://images.unsplash.com/photo-1493106819501-66d381c466f1?auto=format&fit=crop&w=1600&q=80",
+    image: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=1600&q=80",
     accent: "#b45309",
     subcategories: [
       { id: "clay-pots", name: "Clay Pots", children: ["Cooking Pots", "Storage Jars", "Planters"] },
@@ -263,7 +263,7 @@ export const vendors = [
     responseTime: "3h",
     verified: true,
     joined: "2022",
-    image: "https://images.unsplash.com/photo-1493106819501-66d381c466f1?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=1200&q=80",
     description: "Hand-thrown clay pots, ceramic vases, and tableware made by village pottery makers.",
   },
   {

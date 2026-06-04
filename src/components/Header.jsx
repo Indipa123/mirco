@@ -71,12 +71,12 @@ export default function Header() {
         <nav className="nav-links">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/vendors">All Vendors</NavLink>
-          <NavLink to="/vendor/dashboard">Vendor Zone</NavLink>
+          {user?.role === "vendor" && <NavLink to="/vendor/dashboard">Vendor Zone</NavLink>}
           {!user && <NavLink to="/login">Login</NavLink>}
         </nav>
 
         <div className="header-actions">
-          <Link className="icon-action" to="/vendor/dashboard" aria-label="Vendor dashboard"><PackagePlus size={20} /></Link>
+          {user?.role === "vendor" && <Link className="icon-action" to="/vendor/dashboard" aria-label="Vendor dashboard"><PackagePlus size={20} /></Link>}
           <button className="icon-action" onClick={() => setCartOpen(true)} aria-label="Open cart">
             <ShoppingCart size={20} />
             <span>{totals.count}</span>
@@ -130,7 +130,7 @@ export default function Header() {
           <nav className="mobile-nav">
             <NavLink to="/" onClick={closeMenu}>Home</NavLink>
             <NavLink to="/vendors" onClick={closeMenu}>All Vendors</NavLink>
-            <NavLink to="/vendor/dashboard" onClick={closeMenu}>Vendor Zone</NavLink>
+            {user?.role === "vendor" && <NavLink to="/vendor/dashboard" onClick={closeMenu}>Vendor Zone</NavLink>}
             {!user && <NavLink to="/login" onClick={closeMenu}>Login</NavLink>}
           </nav>
 

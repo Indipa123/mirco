@@ -1,7 +1,7 @@
-import { ArrowRight, BadgeCheck, Building2, Package, Truck } from "lucide-react";
 import { Link, useSearchParams } from "react-router-dom";
 import CategorySidebar from "../components/CategorySidebar.jsx";
 import EmptyState from "../components/EmptyState.jsx";
+import HeroBanner from "../components/HeroBanner.jsx";
 import ProductCard from "../components/ProductCard.jsx";
 import SectionHeader from "../components/SectionHeader.jsx";
 import VendorCard from "../components/VendorCard.jsx";
@@ -24,23 +24,7 @@ export default function Home() {
     <div className="page app-grid">
       <CategorySidebar />
       <div className="stack">
-        <section className="hero">
-          <div className="hero-copy">
-            <span className="eyebrow">Shop Local</span>
-            <h1>Micro & Small Vendor Marketplace</h1>
-            <p>Discover trusted local shops, compare products with clear prices, filter by location, and order from micro and small businesses across Sri Lanka.</p>
-            <div className="hero-actions">
-              <Link className="primary-button" to="/vendors">Explore vendors <ArrowRight size={18} /></Link>
-              <Link className="secondary-button" to="/vendor/dashboard">List your shop</Link>
-            </div>
-          </div>
-          <div className="hero-panel">
-            <div><Package /><strong>Products</strong><span>Live catalog with stock, min order, specs</span></div>
-            <div><Building2 /><strong>Vendors</strong><span>Verified shop profiles and location filters</span></div>
-            <div><Truck /><strong>Orders</strong><span>Cart, checkout, delivery estimate</span></div>
-            <div><BadgeCheck /><strong>Trust</strong><span>Ratings, response time, vendor verification</span></div>
-          </div>
-        </section>
+        <HeroBanner />
 
         <SectionHeader
           eyebrow="Catalog"
