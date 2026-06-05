@@ -2,18 +2,9 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const SLIDES = [
-  {
-    bg: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1800&q=85",
-    pos: "center 55%",
-  },
-  {
-    bg: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?auto=format&fit=crop&w=1800&q=85",
-    pos: "center 40%",
-  },
-  {
-    bg: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=1800&q=85",
-    pos: "center 50%",
-  },
+  { bg: "/banners/banner1.png", pos: "center center" },
+  { bg: "/banners/banner2.png", pos: "center center" },
+  { bg: "/banners/banner3.png", pos: "center center" },
 ];
 
 export default function HeroBanner() {

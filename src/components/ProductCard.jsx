@@ -17,9 +17,11 @@ export default function ProductCard({ product, index = 0 }) {
     setTimeout(() => setAdded(false), 1600);
   };
 
+  const isLocalPng = product.image.startsWith("/") && product.image.endsWith(".png");
+
   return (
     <article className="product-card" data-reveal style={{ "--i": index }}>
-      <Link className="product-media" to={`/product/${product.id}`}>
+      <Link className={`product-media${isLocalPng ? " fit-contain" : ""}`} to={`/product/${product.id}`}>
         <img src={product.image} alt={product.name} loading="lazy" />
         <span className="product-badge">{category?.name}</span>
       </Link>

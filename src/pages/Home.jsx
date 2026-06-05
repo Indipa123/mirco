@@ -1,4 +1,5 @@
 import { Link, useSearchParams } from "react-router-dom";
+import { useMemo } from "react";
 import CategorySidebar from "../components/CategorySidebar.jsx";
 import EmptyState from "../components/EmptyState.jsx";
 import HeroBanner from "../components/HeroBanner.jsx";
@@ -13,12 +14,24 @@ export default function Home() {
   const query = slugText(params.get("q") || "");
   const location = params.get("location") || "";
 
-  const filteredProducts = products.filter((product) => {
-    const vendor = vendors.find((item) => item.id === product.vendorId);
-    const category = categories.find((item) => item.id === product.categoryId);
-    const haystack = slugText(`${product.name} ${product.tags.join(" ")} ${vendor.name} ${vendor.location} ${category.name}`);
-    return (!query || haystack.includes(query)) && (!location || vendor.location === location);
-  });
+  const filteredProducts = useMemo(() => {
+    const matched = products.filter((product) => {
+      const vendor = vendors.find((item) => item.id === product.vendorId);
+      const category = categories.find((item) => item.id === product.categoryId);
+      const haystack = slugText(`${product.name} ${product.tags.join(" ")} ${vendor.name} ${vendor.location} ${category.name}`);
+      return (!query || haystack.includes(query)) && (!location || vendor.location === location);
+    });
+    const masks = matched.filter((p) => p.subcategoryId === "wooden-art");
+    const others = matched.filter((p) => p.subcategoryId !== "wooden-art");
+    const result = [];
+    let mi = 0, oi = 0;
+    while (oi < others.length || mi < masks.length) {
+      if (oi < others.length) result.push(others[oi++]);
+      if (oi < others.length) result.push(others[oi++]);
+      if (mi < masks.length) result.push(masks[mi++]);
+    }
+    return result;
+  }, [query, location]);
 
   return (
     <div className="page app-grid">
