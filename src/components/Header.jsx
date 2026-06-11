@@ -74,7 +74,6 @@ export default function Header() {
           <NavLink to="/">Home</NavLink>
           <NavLink to="/vendors">All Vendors</NavLink>
           {user?.role === "vendor" && <NavLink to="/vendor/dashboard">Vendor Zone</NavLink>}
-          {!user && <NavLink to="/login">Login</NavLink>}
         </nav>
 
         <div className="header-actions">
