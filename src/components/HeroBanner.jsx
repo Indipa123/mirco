@@ -13,9 +13,9 @@ export default function HeroBanner() {
 
   useEffect(() => {
     if (paused) return;
-    const id = setInterval(() => setActive((i) => (i + 1) % SLIDES.length), 5500);
+    const id = setInterval(() => setActive((i) => (i + 1) % SLIDES.length), 4000);
     return () => clearInterval(id);
-  }, [active, paused]);
+  }, [paused]);
 
   const prev = () => setActive((i) => (i - 1 + SLIDES.length) % SLIDES.length);
   const next = () => setActive((i) => (i + 1) % SLIDES.length);

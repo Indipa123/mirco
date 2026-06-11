@@ -53,6 +53,8 @@ export default function Header() {
             <strong>MicroMart</strong>
             <small>Micro & Small Marketplace</small>
           </span>
+          <span className="brand-divider" aria-hidden="true" />
+          <img className="boc-logo" src="/boc-logo.svg" alt="Bank of Ceylon — Bankers to the Nation" />
         </Link>
 
         <form className="command-search" onSubmit={submitSearch}>
@@ -123,6 +125,8 @@ export default function Header() {
                 <strong>MicroMart</strong>
                 <small>Marketplace</small>
               </span>
+              <span className="brand-divider" aria-hidden="true" />
+              <img className="boc-logo" src="/boc-logo.svg" alt="Bank of Ceylon" />
             </Link>
             <button onClick={closeMenu} aria-label="Close menu"><X size={21} /></button>
           </div>

@@ -80,6 +80,14 @@
     @apply mt-1 text-xs font-extrabold text-slate-500;
   }
 
+  .brand-divider {
+    @apply h-9 w-px shrink-0 self-center bg-slate-200;
+  }
+
+  .boc-logo {
+    @apply h-10 w-auto shrink-0 self-center;
+  }
+
   .command-search {
     @apply grid min-h-12 grid-cols-[auto_minmax(100px,1fr)_150px_auto] items-center gap-3 rounded-full border-2 border-slate-200 bg-white py-1 pr-1 pl-4 shadow-xl shadow-market-blue/10 transition focus-within:-translate-y-px focus-within:border-market-orange focus-within:shadow-market-orange/20;
   }
@@ -1135,11 +1143,23 @@
 
   .profile-dropdown {
     @apply invisible absolute top-[calc(100%+0.65rem)] right-0 z-50 w-72 translate-y-2 rounded-xl border border-slate-200 bg-white p-2 opacity-0 shadow-2xl shadow-market-blue/15 transition;
+    transition-delay: 0.15s;
+  }
+
+  /* Invisible bridge over the gap between trigger and dropdown so hover isn't lost */
+  .profile-dropdown::before {
+    content: "";
+    position: absolute;
+    top: -0.85rem;
+    left: 0;
+    right: 0;
+    height: 1rem;
   }
 
   .profile-menu:hover .profile-dropdown,
   .profile-menu:focus-within .profile-dropdown {
     @apply visible translate-y-0 opacity-100;
+    transition-delay: 0s;
   }
 
   .profile-summary {
@@ -1520,6 +1540,14 @@
       @apply grid-cols-[1fr_auto];
     }
 
+    .brand-divider {
+      @apply h-8;
+    }
+
+    .boc-logo {
+      @apply h-9;
+    }
+
     .command-search {
       @apply order-3 col-span-full min-h-12 grid-cols-[auto_minmax(0,1fr)_minmax(112px,140px)_44px] gap-2 rounded-full p-1 pr-1 pl-4;
     }
@@ -1625,11 +1653,19 @@
     }
 
     .brand {
-      @apply min-w-0;
+      @apply min-w-0 gap-2;
     }
 
     .brand-mark {
       @apply size-10 text-xl shadow-[3px_3px_0_#14213d];
+    }
+
+    .brand-divider {
+      @apply h-7;
+    }
+
+    .boc-logo {
+      @apply h-8;
     }
 
     .brand strong {
@@ -1839,6 +1875,11 @@
   }
 
   @media (max-width: 420px) {
+    .app-header .brand-divider,
+    .app-header .boc-logo {
+      @apply hidden;
+    }
+
     .product-grid {
       @apply grid-cols-1 gap-4;
     }
