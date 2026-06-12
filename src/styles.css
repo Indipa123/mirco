@@ -782,7 +782,7 @@
   }
 
   .main-product-image {
-    @apply block aspect-[1/0.78] w-full rounded-lg object-cover shadow-2xl shadow-market-blue/10;
+    @apply block aspect-[1/0.78] w-full rounded-lg bg-white object-contain p-4 shadow-2xl shadow-market-blue/10 sm:p-6;
   }
 
   .purchase-panel {
@@ -1853,6 +1853,11 @@
 
     .thumbs {
       @apply order-2 grid-cols-4;
+    }
+
+    /* Roomier square frame on small screens so the contained image stays large */
+    .main-product-image {
+      @apply aspect-square;
     }
 
     .detail-actions,
