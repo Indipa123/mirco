@@ -38,7 +38,11 @@ export default function ProductDetail() {
             </button>
           ))}
         </div>
-        <img className="main-product-image" src={image} alt={product.name} />
+        <img
+          className={`main-product-image${image.startsWith("/products/") ? " contain" : ""}`}
+          src={image}
+          alt={product.name}
+        />
       </section>
 
       <section className="purchase-panel">
